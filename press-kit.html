@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Press Kit — Dr. Ana María Merico-Stephens | NeuroRebel</title>
+  <meta name="description" content="Press kit for Dr. Ana María Merico-Stephens, constitutional law scholar, founder of NeuroRebel, and neurodiversity advocate." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Design System ─────────────────────────────────────────────── */
+    :root {
+      --ink:       #1a1614;
+      --paper:     #f7f4ef;
+      --cream:     #ede8df;
+      --rust:      #b54a2a;
+      --rust-pale: #f0ddd5;
+      --stone:     #7a706a;
+      --rule:      rgba(26,22,20,0.12);
+      --serif:     'Cormorant Garamond', Georgia, serif;
+      --sans:      'DM Sans', system-ui, sans-serif;
+      --mono:      'DM Mono', monospace;
+    }
+
+    /* ─── Reset & Base ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 17px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Language Toggle ────────────────────────────────────────────── */
+    #lang-en { display: block; }
+    #lang-es { display: none; }
+    body.es #lang-en { display: none; }
+    body.es #lang-es { display: block; }
+
+    /* ─── Header / Masthead ──────────────────────────────────────────── */
+    .masthead {
+      background: var(--ink);
+      color: var(--paper);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .masthead::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 119px,
+        rgba(255,255,255,0.025) 119px,
+        rgba(255,255,255,0.025) 120px
+      );
+      pointer-events: none;
+    }
+
+    .masthead-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3.5rem 2.5rem 3rem;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: end;
+    }
+
+    .masthead-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 1rem;
+    }
+
+    .masthead-name {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+    }
+
+    .masthead-name em {
+      font-style: italic;
+      color: rgba(247,244,239,0.7);
+    }
+
+    .masthead-tagline {
+      margin-top: 1.1rem;
+      font-size: 0.9rem;
+      color: rgba(247,244,239,0.6);
+      font-weight: 300;
+      max-width: 540px;
+      line-height: 1.55;
+    }
+
+    .masthead-photo {
+      width: 170px;
+      height: 210px;
+      object-fit: cover;
+      object-position: top center;
+      border: 2px solid rgba(255,255,255,0.12);
+      flex-shrink: 0;
+      filter: grayscale(20%);
+    }
+
+    /* photo placeholder when no image */
+    .masthead-photo-placeholder {
+      width: 170px;
+      height: 210px;
+      background: rgba(255,255,255,0.06);
+      border: 1px dashed rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: rgba(247,244,239,0.3);
+      letter-spacing: 0.1em;
+      text-align: center;
+      padding: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* ─── Nav Bar (language + download) ─────────────────────────────── */
+    .nav-bar {
+      background: var(--cream);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .nav-bar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.7rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .lang-switch {
+      display: flex;
+      gap: 0;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .lang-switch button {
+      background: none;
+      border: none;
+      padding: 0.35rem 0.85rem;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      color: var(--stone);
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .lang-switch button.active,
+    .lang-switch button:hover {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--rust);
+      color: #fff;
+      text-decoration: none;
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.45rem 1.1rem;
+      border-radius: 3px;
+      transition: background 0.15s;
+    }
+
+    .download-btn:hover { background: #9a3d22; }
+
+    .download-btn svg { flex-shrink: 0; }
+
+    /* ─── Main Content ───────────────────────────────────────────────── */
+    .content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 2.5rem 5rem;
+    }
+
+    /* ─── Section Anatomy ────────────────────────────────────────────── */
+    .section {
+      padding: 2.8rem 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .section:first-child { border-top: none; padding-top: 0; }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 1.5rem;
+    }
+
+    .section h2 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+      color: var(--ink);
+    }
+
+    .section p {
+      font-size: 0.97rem;
+      line-height: 1.75;
+      color: var(--ink);
+      max-width: 72ch;
+    }
+
+    .section p + p { margin-top: 0.9rem; }
+
+    /* ─── Two-column credentials grid ────────────────────────────────── */
+    .credentials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem 2.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .cred-item {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+
+    .cred-dot {
+      width: 5px;
+      height: 5px;
+      background: var(--rust);
+      border-radius: 50%;
+      margin-top: 0.6rem;
+      flex-shrink: 0;
+    }
+
+    .cred-text {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: var(--stone);
+    }
+
+    .cred-text strong {
+      display: block;
+      color: var(--ink);
+      font-weight: 500;
+      font-size: 0.92rem;
+      margin-bottom: 0.1rem;
+    }
+
+    /* ─── Speaking Topics ────────────────────────────────────────────── */
+    .topics-list {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .topic-card {
+      border-left: 2px solid var(--rust);
+      padding-left: 1.2rem;
+    }
+
+    .topic-card h3 {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.3rem;
+    }
+
+    .topic-card p {
+      font-size: 0.88rem;
+      color: var(--stone);
+      max-width: 65ch;
+    }
+
+    /* ─── Recent Activity ────────────────────────────────────────────── */
+    .activity-list {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .activity-item {
+      display: grid;
+      grid-template-columns: 6rem 1fr;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--rule);
+      align-items: baseline;
+    }
+
+    .activity-date {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--stone);
+      letter-spacing: 0.05em;
+      padding-top: 0.1rem;
+    }
+
+    .activity-body {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .activity-body strong {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.15rem;
+    }
+
+    .activity-body span { color: var(--stone); font-size: 0.85rem; }
+
+    /* ─── Contact Strip ──────────────────────────────────────────────── */
+    .contact-strip {
+      background: var(--ink);
+      color: var(--paper);
+      margin-top: 3rem;
+      padding: 2rem 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem 3rem;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-group { }
+
+    .contact-label {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-value {
+      font-size: 0.88rem;
+      color: rgba(247,244,239,0.85);
+      line-height: 1.5;
+    }
+
+    .contact-value a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(247,244,239,0.2);
+      transition: border-color 0.15s;
+    }
+
+    .contact-value a:hover { border-color: var(--rust); }
+
+    /* ─── Footer ─────────────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--stone);
+      border-top: 1px solid var(--rule);
+    }
+
+    /* ─── Responsive ─────────────────────────────────────────────────── */
+    @media (max-width: 680px) {
+      .masthead-inner {
+        grid-template-columns: 1fr;
+        padding: 2.5rem 1.5rem 2rem;
+      }
+      .masthead-photo,
+      .masthead-photo-placeholder { display: none; }
+      .content { padding: 2rem 1.5rem 4rem; }
+      .activity-item { grid-template-columns: 1fr; gap: 0.2rem; }
+      .contact-strip { padding: 2rem 1.5rem; }
+    }
+
+    /* ─── Fade-in on load ────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .content > .section {
+      animation: fadeUp 0.45s ease both;
+    }
+    .content > .section:nth-child(1) { animation-delay: 0.05s; }
+    .content > .section:nth-child(2) { animation-delay: 0.12s; }
+    .content > .section:nth-child(3) { animation-delay: 0.18s; }
+    .content > .section:nth-child(4) { animation-delay: 0.24s; }
+    .content > .section:nth-child(5) { animation-delay: 0.30s; }
+  </style>
+</head>
+
+<body id="body-root">
+
+  <!-- ═══════════════════════════════════════════════════════════
+       MASTHEAD
+  ════════════════════════════════════════════════════════════════ -->
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div>
+        <p class="masthead-eyebrow">Press Kit · Media Kit</p>
+        <h1 class="masthead-name">
+          Dr. Ana María<br><em>Merico-Stephens</em>
+        </h1>
+        <p class="masthead-tagline" id="lang-en">
+          Constitutional law scholar · Founder of NeuroRebel · Neurodivergence researcher and advocate · Playa del Carmen, Mexico
+        </p>
+        <p class="masthead-tagline" id="lang-es" style="display:none;">
+          Profesora emérita de derecho constitucional · Fundadora de NeuroRebel · Investigadora y activista en neurodivergencia · Playa del Carmen, México
+        </p>
+      </div>
+      <!-- Replace src with your actual high-res photo path -->
+      <div class="masthead-photo-placeholder" aria-hidden="true">
+        PHOTO<br>press-photo.jpg<br>assets/
+      </div>
+      <!-- Uncomment when photo is ready:
+      <img class="masthead-photo"
+           src="assets/press-photo.jpg"
+           alt="Dr. Ana María Merico-Stephens"
+           width="170" height="210" />
+      -->
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       NAV BAR
+  ════════════════════════════════════════════════════════════════ -->
+  <nav class="nav-bar">
+    <div class="nav-bar-inner">
+      <div class="lang-switch">
+        <button class="active" onclick="setLang('en')" id="btn-en">EN</button>
+        <button onclick="setLang('es')" id="btn-es">ES</button>
+      </div>
+      <a class="download-btn" href="assets/PressKit_AnaMariaMericoStephens.pdf" download>
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+          <path d="M6.5 1v8M3 6.5l3.5 3.5 3.5-3.5M1 11h11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span id="dl-label-en">Download PDF</span>
+        <span id="dl-label-es" style="display:none;">Descargar PDF</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════════════════════════════════ -->
+  <main class="content">
+
+    <!-- ── Bio Short ──────────────────────────────────────────────── -->
+    <section class="section">
+      <p class="section-label" id="lang-en">Short Biography — 150 words</p>
+      <p class="section-label" id="lang-es" style="display:none;">Biografía breve — 150 palabras</p>
+
+      <div id="lang-en">
+        <p>
+          Dr. Ana María Merico-Stephens is Professor Emerita of Constitutional Law at the University of Arizona (tenured 2004, retired 2016) and a Fulbright Senior Scholar. Diagnosed autistic in adulthood, she translates decades of constitutional analysis into a rigorous critique of the normative frameworks that render neurodivergent people legally and epistemically invisible. She is the founder of <strong>NeuroRebel</strong>, a bilingual neurodiversity education platform with over 296,000 followers across Spanish-speaking Latin America, and co-founder of <strong>Ma'alob Kuxtal A.C.</strong>, a nonprofit advancing neurodivergent inclusion in Quintana Roo, Mexico. Her work spans peer-reviewed research, legislative consultation, keynote speaking, and community advocacy — bringing constitutional expertise to bear on the policy gaps that affect neurodivergent adults across the Global South.
+        </p>
+      </div>
+
+      <div id="lang-es" style="display:none;">
+        <p>
+          La Dra. Ana María Merico-Stephens es Profesora Emérita de Derecho Constitucional de la University of Arizona (titular desde 2004, jubilada en 2016) y Fulbright Senior Scholar. Diagnosticada autista en la adultez, traduce décadas de análisis constitucional en una crítica rigurosa de los marcos normativos que hacen a las personas neurodivergentes legalmente invisibles. Es fundadora de <strong>NeuroRebel</strong>, plataforma bilingüe de educación sobre neurodivergencia con más de 296.000 seguidores en América Latina hispanohablante, y cofundadora de <strong>Ma'alob Kuxtal A.C.</strong>, organización sin fines de lucro que promueve la inclusión neurodivergente en Quintana Roo. Su trabajo abarca investigación arbitrada, consultoría legislativa, conferencias magistrales y advocacy comunitario — aplicando experiencia constitucional a las brechas de política pública que afectan a personas neurodivergentes adultas en el Sur Global.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Bio Long ───────────────────────────────────────────────── -->
+    <section class="section">
+      <p class="section-label" id="lang-en">Full Biography — 400 words</p>
+      <p class="section-label" id="lang-es" style="display:none;">Biografía completa — 400 palabras</p>
+
+      <div id="lang-en">
+        <p>
+          Dr. Ana María Merico-Stephens spent twenty years as a tenured professor of Constitutional Law at the University of Arizona, where she received her tenure in 2004 and retired with emerita status in 2016. Trained in LatCrit theory and critical legal studies, she brought a constitutive attention to the relationship between law and power to everything she taught and published — an attention that has not diminished in the years since she left the classroom, only sharpened and redirected.
+        </p>
+        <p>
+          Her late autism diagnosis at 52 was not an interruption of her intellectual life but its clarifying refraction. It made legible, through lived experience, the structural argument she had been making for years in constitutional terms: that normative systems produce the categories they claim merely to describe, and that the people rendered unintelligible by those categories bear the cost invisibly. This insight now anchors her public work.
+        </p>
+        <p>
+          As founder and host of <strong>NeuroRebel</strong>, the bilingual neurodiversity education platform with more than 296,000 followers across TikTok, Instagram, and podcast channels throughout Spanish-speaking Latin America, Dr. Merico-Stephens has built a practice of what she calls <em>epistemic translation</em>: making rigorous academic research accessible to neurodivergent communities without sacrificing intellectual precision. The platform is known for its refusal of deficit-based frameworks, its engagement with peer-reviewed literature, and its unflinching critique of pseudoscientific narratives in the Latin American media landscape.
+        </p>
+        <p>
+          She is co-founder of <strong>Ma'alob Kuxtal A.C.</strong>, a nonprofit organization based in Quintana Roo focused on neurodivergent inclusion, community education, and policy advocacy in the region. As a permanent resident of Mexico, she frames her legislative engagement as comparative legal education — bringing the analytical tools of constitutional scholarship to bear on the policy gaps that affect neurodivergent adults across the Global South.
+        </p>
+        <p>
+          Her current scholarly work centers on the Inter-American Court's Advisory Opinion OC-31/25 on the right to care and its implications for autism legislation throughout Latin America. She has been consulted in legislative processes on both sides of the border, and brings a constitutionalist's precision to the question of what law actually does to neurodivergent people — as distinct from what it claims to do on their behalf. Her broader intellectual framework — grounded in Foucauldian critical genealogy, disability studies, and decolonial theory — asks the diagnostic question she applies to every inquiry: <em>what is this concept doing, to whom, and on whose authority?</em>
+        </p>
+      </div>
+
+      <div id="lang-es" style="display:none;">
+        <p>
+          La Dra. Ana María Merico-Stephens pasó veinte años como profesora titular de Derecho Constitucional en la University of Arizona, donde obtuvo la titularidad en 2004 y se jubiló con el rango de emérita en 2016. Formada en la teoría LatCrit y los estudios jurídicos críticos, llevó a su docencia y publicaciones una atención constitutiva a la relación entre derecho y poder — una atención que no ha disminuido desde que dejó las aulas, sino que se ha afilado y redirigido.
+        </p>
+        <p>
+          Su diagnóstico tardío de autismo a los 52 años no fue una interrupción de su vida intelectual, sino su refracción clarificadora. Hizo legible, desde la experiencia encarnada, el argumento estructural que ella venía construyendo durante años en términos constitucionales: que los sistemas normativos producen las categorías que afirman meramente describir, y que las personas que esos sistemas vuelven ininteligibles cargan el costo de manera invisible.
+        </p>
+        <p>
+          Como fundadora y conductora de <strong>NeuroRebel</strong>, plataforma bilingüe de educación sobre neurodivergencia con más de 296.000 seguidores en TikTok, Instagram y podcast en América Latina hispanohablante, la Dra. Merico-Stephens ha construido una práctica de lo que ella llama <em>traducción epistémica</em>: hacer accesible la investigación académica rigurosa a comunidades neurodivergentes sin sacrificar la precisión intelectual. La plataforma es conocida por su rechazo a los marcos deficitarios, su compromiso con la literatura revisada por pares, y su crítica frontal a las narrativas pseudocientíficas en los medios latinoamericanos.
+        </p>
+        <p>
+          Es cofundadora de <strong>Ma'alob Kuxtal A.C.</strong>, organización sin fines de lucro con sede en Quintana Roo, enfocada en inclusión neurodivergente, educación comunitaria y advocacy en políticas públicas regionales. Como residente permanente en México, encuadra su participación legislativa como educación jurídica comparada.
+        </p>
+        <p>
+          Su trabajo académico actual se centra en la Opinión Consultiva OC-31/25 de la Corte Interamericana sobre el derecho al cuidado y sus implicaciones para la legislación sobre autismo en América Latina. Ha sido consultada en procesos legislativos a ambos lados de la frontera, y aporta la precisión de una constitucionalista a la pregunta de qué hace realmente el derecho con las personas neurodivergentes, en contraste con lo que afirma hacer en su nombre. Su marco intelectual — anclado en la genealogía crítica foucaultiana, los estudios críticos de la discapacidad y la teoría decolonial — aplica la misma pregunta diagnóstica a toda indagación: <em>¿qué hace este concepto, con quién, y con qué autoridad?</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Credentials ────────────────────────────────────────────── -->
+    <section class="section">
+      <p class="section-label" id="lang-en">Credentials &amp; Affiliations</p>
+      <p class="section-label" id="lang-es" style="display:none;">Credenciales y afiliaciones</p>
+
+      <div class="credentials-grid">
+        <div class="cred-item">
+          <div class="cred-dot"></div>
+          <div class="cred-text">
+            <strong id="lang-en">Professor Emerita, Constitutional Law</strong>
+            <strong id="lang-es" style="display:none;">Profesora Emérita, Derecho Constitucional</strong>
+            <span id="lang-en">University of Arizona · Tenured 2004 · Retired 2016</span>
+            <span id="lang-es" style="display:none;">University of Arizona · Titular 2004 · Jubilada 2016</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-dot"></div>
+          <div class="cred-text">
+            <strong>Fulbright Senior Scholar</strong>
+            <span id="lang-en">Fulbright Program, U.S. Department of State</span>
+            <span id="lang-es" style="display:none;">Programa Fulbright, Departamento de Estado de EE. UU.</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-dot"></div>
+          <div class="cred-text">
+            <strong id="lang-en">Founder, NeuroRebel</strong>
+            <strong id="lang-es" style="display:none;">Fundadora, NeuroRebel</strong>
+            <span id="lang-en">Bilingual neurodiversity platform · 296K+ followers</span>
+            <span id="lang-es" style="display:none;">Plataforma bilingüe de neurodivergencia · 296K+ seguidores</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-dot"></div>
+          <div class="cred-text">
+            <strong id="lang-en">Co-Founder, Ma'alob Kuxtal A.C.</strong>
+            <strong id="lang-es" style="display:none;">Cofundadora, Ma'alob Kuxtal A.C.</strong>
+            <span id="lang-en">Nonprofit · Quintana Roo, Mexico · Est. 2023</span>
+            <span id="lang-es" style="display:none;">Asociación civil · Quintana Roo, México · Fund. 2023</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-dot"></div>
+          <div class="cred-text">
+            <strong id="lang-en">Researcher &amp; Public Scholar</strong>
+            <strong id="lang-es" style="display:none;">Investigadora y académica pública</strong>
+            <span id="lang-en">Critical genealogy · Disability studies · Inter-American human rights law</span>
+            <span id="lang-es" style="display:none;">Genealogía crítica · Estudios críticos de discapacidad · Derecho interamericano de DDHH</span>
+          </div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-dot"></div>
+          <div class="cred-text">
+            <strong id="lang-en">Permanent Resident, Mexico</strong>
+            <strong id="lang-es" style="display:none;">Residente permanente, México</strong>
+            <span>Playa del Carmen, Quintana Roo</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Speaking Topics ────────────────────────────────────────── -->
+    <section class="section">
+      <p class="section-label" id="lang-en">Speaking Topics</p>
+      <p class="section-label" id="lang-es" style="display:none;">Temas de ponencia</p>
+
+      <!-- ENGLISH -->
+      <div id="lang-en">
+        <div class="topics-list">
+          <div class="topic-card">
+            <h3>The Right to Care and the Neurodivergent Adult: OC-31/25 in Legislative Practice</h3>
+            <p>A comparative legal analysis of the Inter-American Court's Advisory Opinion OC-31/25 and its implications for autism and neurodivergence legislation across Latin America. Designed for legislatures, human rights bodies, and academic institutions.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Architecture of Invisibility: How Normative Systems Produce Neurodivergent Exclusion</h3>
+            <p>A genealogical critique tracing how diagnostic categories, institutional tempo, and measurability assumptions render neurodivergent people unintelligible — and what constitutional and policy frameworks can do about it.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Late Diagnosis and the Politics of Knowledge: Autism, Gender, and the Construction of Normal</h3>
+            <p>An interdisciplinary lecture grounded in disability studies, feminist epistemology, and critical genealogy. Addresses the systemic underdiagnosis of autistic women and the power structures that produce it.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Beyond the Medical Model: A Post-Pathological Framework for Neurodivergence in Latin America</h3>
+            <p>Drawing on the neurodiversity paradigm, decolonial theory, and community-based research, this talk argues for a shift in how institutions, media, and policy approach neurodivergence in the Global South.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Epistemic Translation as Social Justice: Making Research Legible Without Making It Smaller</h3>
+            <p>Reflects on the practice and ethics of communicating rigorous science to lay audiences — particularly neurodivergent communities in Latin America — without sacrificing analytical precision or lived-experience authority.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SPANISH -->
+      <div id="lang-es" style="display:none;">
+        <div class="topics-list">
+          <div class="topic-card">
+            <h3>El derecho al cuidado y la persona neurodivergente adulta: la OC-31/25 en la práctica legislativa</h3>
+            <p>Análisis comparado de la Opinión Consultiva OC-31/25 de la Corte Interamericana y sus implicaciones para la legislación sobre autismo y neurodivergencia en América Latina. Diseñado para legislaturas, organismos de derechos humanos e instituciones académicas.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Arquitectura de exclusión: cómo los sistemas normativos producen la invisibilidad neurodivergente</h3>
+            <p>Crítica genealógica de las categorías diagnósticas, el tempo institucional y las métricas de competencia que hacen a las personas neurodivergentes ininteligibles — y qué pueden hacer al respecto los marcos constitucionales y de política pública.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Diagnóstico tardío y política del conocimiento: autismo, género y la construcción de lo normal</h3>
+            <p>Conferencia interdisciplinaria en estudios críticos de discapacidad, epistemología feminista y genealogía crítica. Aborda el subdiagnóstico sistémico en mujeres autistas y las estructuras de poder que lo producen.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Más allá del modelo médico: hacia un marco post-patológico de la neurodivergencia en América Latina</h3>
+            <p>Desde el paradigma de la neurodiversidad, la teoría decolonial y la investigación comunitaria, esta ponencia argumenta por un cambio en la forma en que las instituciones, los medios y las políticas públicas abordan la neurodivergencia en el Sur Global.</p>
+          </div>
+          <div class="topic-card">
+            <h3>Traducción epistémica como justicia social: hacer legible la ciencia sin hacerla pequeña</h3>
+            <p>Reflexión sobre la práctica y la ética de comunicar investigación rigurosa a audiencias no especializadas — en particular comunidades neurodivergentes en América Latina — sin sacrificar precisión analítica ni la autoridad de la experiencia vivida.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Recent Activity ────────────────────────────────────────── -->
+    <section class="section">
+      <p class="section-label" id="lang-en">Recent Engagements &amp; Publications</p>
+      <p class="section-label" id="lang-es" style="display:none;">Actividades y publicaciones recientes</p>
+
+      <div class="activity-list">
+        <div class="activity-item">
+          <div class="activity-date">2025–26</div>
+          <div class="activity-body">
+            <strong id="lang-en">Legislative Consultation · Mexico &amp; Prior U.S. Experience</strong>
+            <strong id="lang-es" style="display:none;">Consultoría legislativa · México y experiencia previa en EE. UU.</strong>
+            <span id="lang-en">Consulted in legislative and policy processes on neurodivergence and disability rights, in both Mexico and the United States. Brings constitutional law expertise and community-grounded research to institutional processes.</span>
+            <span id="lang-es" style="display:none;">Ha sido consultada en procesos legislativos y de política pública sobre neurodivergencia y derechos de las personas con discapacidad, tanto en México como en Estados Unidos. Aporta experiencia constitucional e investigación anclada en comunidad a procesos institucionales.</span>
+          </div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-date">2025–26</div>
+          <div class="activity-body">
+            <strong id="lang-en">Published Article · <em>Conocimiento y Ciencia</em></strong>
+            <strong id="lang-es" style="display:none;">Artículo publicado · <em>Conocimiento y Ciencia</em></strong>
+            <span id="lang-en">Peer-reviewed article on unproven autism treatments in Latin America.</span>
+            <span id="lang-es" style="display:none;">Artículo arbitrado sobre tratamientos sin evidencia para el autismo en América Latina.</span>
+          </div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-date">2025</div>
+          <div class="activity-body">
+            <strong id="lang-en">Working Paper</strong>
+            <strong id="lang-es" style="display:none;">Working paper</strong>
+            <span id="lang-en">"Arquitectura de exclusión y derecho al cuidado: La OC-31/25 y la población neurodivergente adulta en América Latina"</span>
+            <span id="lang-es" style="display:none;">"Arquitectura de exclusión y derecho al cuidado: La OC-31/25 y la población neurodivergente adulta en América Latina"</span>
+          </div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-date">2024–26</div>
+          <div class="activity-body">
+            <strong id="lang-en">Keynote Speaking · Multiple Conferences, Mexico &amp; Latin America</strong>
+            <strong id="lang-es" style="display:none;">Conferencias magistrales · Múltiples congresos, México y América Latina</strong>
+            <span id="lang-en">Invited keynote speaker at academic and professional conferences on neurodivergence, autism, gender, and disability rights across the region.</span>
+            <span id="lang-es" style="display:none;">Conferencista magistral invitada en congresos académicos y profesionales sobre neurodivergencia, autismo, género y derechos, en diversos países de la región.</span>
+          </div>
+        </div>
+        <div class="activity-item">
+          <div class="activity-date">2024–26</div>
+          <div class="activity-body">
+            <strong id="lang-en">NeuroRebel Platform · Ongoing Production</strong>
+            <strong id="lang-es" style="display:none;">Plataforma NeuroRebel · Producción continua</strong>
+            <span id="lang-en">Active bilingual content production across TikTok, Instagram, and podcast. Topics include autistic masking, late diagnosis, DSM critique, and Inter-American disability rights law.</span>
+            <span id="lang-es" style="display:none;">Producción bilingüe activa en TikTok, Instagram y podcast. Temas incluyen enmascaramiento autista, diagnóstico tardío, crítica al DSM y derecho interamericano de discapacidad.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CONTACT STRIP
+  ════════════════════════════════════════════════════════════════ -->
+  <div class="contact-strip">
+    <div class="contact-group">
+      <p class="contact-label" id="lang-en">Website</p>
+      <p class="contact-label" id="lang-es" style="display:none;">Sitio web</p>
+      <p class="contact-value"><a href="https://neurorebel.org" target="_blank" rel="noopener">neurorebel.org</a></p>
+    </div>
+    <div class="contact-group">
+      <p class="contact-label">Email</p>
+      <p class="contact-value">
+        <!-- Replace with your actual booking/press email -->
+        <a href="mailto:press@neurorebel.org">press@neurorebel.org</a>
+      </p>
+    </div>
+    <div class="contact-group">
+      <p class="contact-label" id="lang-en">Social / Podcast</p>
+      <p class="contact-label" id="lang-es" style="display:none;">Redes / Podcast</p>
+      <p class="contact-value">
+        <a href="https://tiktok.com/@neurorebelpodcast" target="_blank" rel="noopener">@neurorebelpodcast</a><br>
+        TikTok · Instagram · Spotify
+      </p>
+    </div>
+    <div class="contact-group">
+      <p class="contact-label" id="lang-en">CV &amp; Media</p>
+      <p class="contact-label" id="lang-es" style="display:none;">CV y materiales</p>
+      <p class="contact-value">
+        <a href="/AnaMariaMericoStephens_CV.html" target="_blank">neurorebel.org/cv</a><br>
+        <span style="font-size:0.78rem;color:rgba(247,244,239,0.5);" id="lang-en">Full CV · Downloadable DOCX</span>
+        <span style="font-size:0.78rem;color:rgba(247,244,239,0.5);" id="lang-es" style="display:none;">CV completo · DOCX descargable</span>
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <span id="lang-en">© 2026 Ana María Merico-Stephens · NeuroRebel · All rights reserved</span>
+    <span id="lang-es" style="display:none;">© 2026 Ana María Merico-Stephens · NeuroRebel · Todos los derechos reservados</span>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       LANGUAGE SWITCH LOGIC
+  ════════════════════════════════════════════════════════════════ -->
+  <script>
+    function setLang(lang) {
+      const body = document.getElementById('body-root');
+      const btnEn = document.getElementById('btn-en');
+      const btnEs = document.getElementById('btn-es');
+      const dlEn = document.getElementById('dl-label-en');
+      const dlEs = document.getElementById('dl-label-es');
+
+      // Toggle body class
+      if (lang === 'es') {
+        body.classList.add('es');
+        btnEn.classList.remove('active');
+        btnEs.classList.add('active');
+        dlEn.style.display = 'none';
+        dlEs.style.display = 'inline';
+      } else {
+        body.classList.remove('es');
+        btnEn.classList.add('active');
+        btnEs.classList.remove('active');
+        dlEn.style.display = 'inline';
+        dlEs.style.display = 'none';
+      }
+
+      // Toggle all #lang-en and #lang-es elements
+      document.querySelectorAll('#lang-en').forEach(el => {
+        el.style.display = lang === 'en' ? '' : 'none';
+      });
+      document.querySelectorAll('#lang-es').forEach(el => {
+        el.style.display = lang === 'es' ? '' : 'none';
+      });
+    }
+
+    // Initialize EN on load
+    setLang('en');
+  </script>
+
+</body>
+</html>
