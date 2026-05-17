@@ -37,13 +37,8 @@
     }
 
 
-    /* Spanish shows by default; English hidden by default */
-    .lang-en { display: none !important; }
-    span.lang-en { display: none !important; }
-    body.lang-en .lang-en { display: block !important; }
-    body.lang-en .lang-es { display: none !important; }
-    body.lang-en span.lang-en { display: inline !important; }
-    body.lang-en span.lang-es { display: none !important; }
+    /* Language switching handled entirely by JavaScript */
+    .lang-hidden { display: none !important; }
 
     /* ── HEADER ── */
     header {
@@ -599,15 +594,24 @@
 
 <script>
   function setLang(lang) {
-    document.getElementById('body-root').className = 'lang-' + lang;
+    // Show/hide all lang-es elements
+    document.querySelectorAll('.lang-es').forEach(function(el) {
+      el.style.display = (lang === 'es') ? '' : 'none';
+    });
+    // Show/hide all lang-en elements
+    document.querySelectorAll('.lang-en').forEach(function(el) {
+      el.style.display = (lang === 'en') ? '' : 'none';
+    });
+    // Toggle buttons
     document.getElementById('btn-es').classList.toggle('active', lang === 'es');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
     localStorage.setItem('neurorebel-lang', lang);
   }
-  (function() {
+  // Run on load — default to Spanish
+  document.addEventListener('DOMContentLoaded', function() {
     var saved = localStorage.getItem('neurorebel-lang') || 'es';
     setLang(saved);
-  })();
+  });
 </script>
 
 </body>
