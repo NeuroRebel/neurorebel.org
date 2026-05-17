@@ -37,10 +37,16 @@
     }
 
     /* ── LANGUAGE ── */
-    .lang-en, .lang-es { display: none; }
+    /* Spanish shows by default; English hidden by default */
+    .lang-en { display: none; }
+    .lang-es { display: block; }
+    span.lang-en { display: none; }
+    span.lang-es { display: inline; }
+    /* When EN is active */
     body.lang-en .lang-en { display: block; }
-    body.lang-es .lang-es { display: block; }
-    body.lang-en span.lang-en, body.lang-es span.lang-es { display: inline; }
+    body.lang-en .lang-es { display: none; }
+    body.lang-en span.lang-en { display: inline; }
+    body.lang-en span.lang-es { display: none; }
 
     /* ── HEADER ── */
     header {
