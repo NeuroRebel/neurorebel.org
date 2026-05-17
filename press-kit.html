@@ -36,17 +36,14 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── LANGUAGE ── */
+
     /* Spanish shows by default; English hidden by default */
-    .lang-en { display: none; }
-    .lang-es { display: block; }
-    span.lang-en { display: none; }
-    span.lang-es { display: inline; }
-    /* When EN is active */
-    body.lang-en .lang-en { display: block; }
-    body.lang-en .lang-es { display: none; }
-    body.lang-en span.lang-en { display: inline; }
-    body.lang-en span.lang-es { display: none; }
+    .lang-en { display: none !important; }
+    span.lang-en { display: none !important; }
+    body.lang-en .lang-en { display: block !important; }
+    body.lang-en .lang-es { display: none !important; }
+    body.lang-en span.lang-en { display: inline !important; }
+    body.lang-en span.lang-es { display: none !important; }
 
     /* ── HEADER ── */
     header {
