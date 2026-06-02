@@ -188,6 +188,15 @@
     e.preventDefault();
     const url = 'PressKit_AnaMariaMericoStephens.pdf';
     const filename = 'PressKit_AnaMariaMericoStephens.pdf';
+
+    // iOS (all browsers on iPhone/iPad) blocks programmatic downloads entirely.
+    // Open in new tab — PDF viewer gives Share/Save to Files option.
+    if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      window.open(url, '_blank');
+      return;
+    }
+
+    // Desktop and Android Chrome: blob download
     fetch(url)
       .then(r => r.blob())
       .then(blob => {
@@ -201,7 +210,6 @@
         setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
       })
       .catch(() => {
-        // Fallback: open directly in new tab
         window.open(url, '_blank');
       });
   }
